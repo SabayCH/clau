@@ -18,14 +18,18 @@
 
 body {
     background: var(--bg-gradient);
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Permitir scroll si el contenido es más alto que la pantalla */
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--text);
+    padding: 20px 0;
+    /* Espacio arriba y abajo en móviles */
 }
 
 /* Canvas para el efecto Antigravedad */
@@ -56,15 +60,16 @@ body {
 
 #overlay h1 {
     font-family: 'Dancing Script', cursive;
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: var(--primary);
     animation: pulse 1.5s infinite;
     text-align: center;
+    padding: 0 20px;
 }
 
 #overlay p {
     margin-top: 15px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     opacity: 0.8;
     letter-spacing: 1px;
 }
@@ -77,21 +82,23 @@ body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
-    padding: 2.5rem 2rem;
+    padding: 2rem 1.5rem;
     border-radius: 30px;
-    width: 90%;
-    max-width: 420px;
+    width: 92%;
+    max-width: 400px;
     text-align: center;
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
     display: none;
     animation: floatCard 6s ease-in-out infinite;
     overflow: hidden;
+    margin: auto;
+    /* Centrado extra */
 }
 
 /* Foto de Perfil Principal */
 .profile-img {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     /* La de perfil se ve mejor circular y llena */
@@ -104,7 +111,7 @@ body {
 
 h2 {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
     background: linear-gradient(to right, #ff9a9e, #fecfef);
     -webkit-background-clip: text;
@@ -116,7 +123,7 @@ h2 {
 .carousel-view {
     position: relative;
     width: 100%;
-    margin: 20px 0;
+    margin: 15px 0;
     overflow: hidden;
 }
 
@@ -130,16 +137,16 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 .slide-img-container {
     width: 100%;
-    height: 250px;
+    height: 220px;
     /* Un poco más alto para ver mejor las fotos */
     border-radius: 15px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     background: rgba(0, 0, 0, 0.2);
@@ -158,8 +165,8 @@ h2 {
 
 
 .slide p {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    line-height: 1.5;
     font-weight: 300;
     color: #efefef;
 }
@@ -169,7 +176,7 @@ h2 {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .nav-btn {
@@ -194,7 +201,7 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin: 15px 0;
+    margin: 12px 0;
 }
 
 .dot {
@@ -207,14 +214,14 @@ h2 {
 
 .dot.active {
     background: var(--primary);
-    width: 20px;
+    width: 18px;
     border-radius: 4px;
 }
 
 /* Botón Carta */
 .letter-btn {
-    margin-top: 25px;
-    padding: 12px 25px;
+    margin-top: 20px;
+    padding: 10px 22px;
     background: var(--primary);
     border: none;
     border-radius: 50px;
@@ -223,7 +230,7 @@ h2 {
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(255, 183, 178, 0.4);
     transition: 0.3s;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .letter-btn:hover {
@@ -240,21 +247,23 @@ h2 {
     display: none;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
     backdrop-filter: blur(5px);
 }
 
 .letter-content {
     background: #fff9f0;
     color: #444;
-    padding: 2.5rem;
-    border-radius: 10px;
-    max-width: 500px;
-    width: 95%;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    max-width: 450px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
     position: relative;
     font-family: 'Dancing Script', cursive;
-    font-size: 1.4rem;
-    line-height: 1.5;
+    font-size: 1.25rem;
+    line-height: 1.4;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     transform: translateY(20px);
     opacity: 0;
@@ -268,7 +277,7 @@ h2 {
 
 .close-letter {
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 15px;
     font-size: 2rem;
     cursor: pointer;
@@ -288,7 +297,7 @@ h2 {
 }
 
 .lightbox img {
-    max-width: 90%;
+    max-width: 95%;
     max-height: 90%;
     border-radius: 10px;
     transform: scale(0.9);
@@ -326,24 +335,50 @@ h2 {
     }
 
     50% {
-        transform: translateY(-15px);
+        transform: translateY(-10px);
     }
 }
 
-@media (max-width: 420px) {
+/* Media Query para pantallas pequeñas */
+@media (max-width: 400px) {
     h2 {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
     }
 
     .card {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1.2rem;
+    }
+
+    .slide-img-container {
+        height: 180px;
+    }
+
+    .slide p {
+        font-size: 0.85rem;
+    }
+
+    .letter-content {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-height: 650px) {
+    .card {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .profile-img {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 0.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
     }
 
     .slide-img-container {
         height: 150px;
-    }
-
-    .slide p {
-        font-size: 0.9rem;
     }
 }
