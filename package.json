@@ -1,0 +1,12 @@
+{
+  "name": "regalo-claudia",
+  "version": "1.0.0",
+  "description": "Pagina de cumpleaños para Claudia",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}

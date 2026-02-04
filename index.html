@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amor, Claudia ❤️</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+
+    <audio id="bg-music" loop preload="auto">
+        <source src="Zoe_-_Luna_MTV_Unplugged_2011_(mp3.pm).mp3" type="audio/mpeg">
+    </audio>
+
+
+    <canvas id="canvas-bg"></canvas>
+
+    <div id="overlay" onclick="startExperience()">
+        <h1>Para Claudia ❤️</h1>
+        <p>TOCA LA PANTALLA PARA EMPEZAR</p>
+    </div>
+
+    <div class="card" id="main-card">
+        <img src="assets/portada.jpg" alt="Claudia" class="profile-img"
+            onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=500&auto=format&fit=crop';">
+
+        <h2>¡Feliz Cumpleaños!</h2>
+
+        <div class="carousel-view">
+            <div class="carousel-track" id="track">
+                <!-- Slide 1: Te quiero -->
+                <div class="slide">
+                    <div class="slide-img-container">
+                        <img src="assets/foto1.jpg" alt="Recuerdo 1"
+                            onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=500&auto=format&fit=crop';">
+                    </div>
+                    <p><b>Te quiero</b>. Más allá de grandes promesas, mi deseo real es que ambos encontremos esa paz y
+                        alegría que tanto necesitamos. Gracias por compartir este tramo del camino conmigo.</p>
+                </div>
+
+                <!-- Slide 2: Lo siento -->
+                <div class="slide">
+                    <div class="slide-img-container">
+                        <img src="assets/foto2.jpg" alt="Recuerdo 2"
+                            onerror="this.src='https://images.unsplash.com/photo-1494972308805-463bc619d34e?q=80&w=500&auto=format&fit=crop';">
+                    </div>
+                    <p><b>Lo siento</b>. Sé que hemos pasado por mucho y no quiero que suframos más. Mi compromiso es
+                        trabajar en lo que nos hace bien y cuidar nuestra felicidad mutua mientras estemos aquí.</p>
+                </div>
+
+                <!-- Slide 3: Disfruta -->
+                <div class="slide">
+                    <div class="slide-img-container">
+                        <img src="assets/foto3.jpg" alt="Recuerdo 3"
+                            onerror="this.src='https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=500&auto=format&fit=crop';">
+                    </div>
+                    <p><b>Disfruta</b>. Te mereces sonreír de nuevo. Mi mayor deseo hoy es que seas feliz por ti misma,
+                        y que esa felicidad nos acompañe y nos dé fuerzas en todo lo que decidamos construir.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="swipe-dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="nav-controls">
+            <button class="nav-btn" onclick="prevSlide()">❮</button>
+            <button class="nav-btn" onclick="nextSlide()">❯</button>
+        </div>
+
+        <button class="letter-btn" onclick="openLetter()">Leer mi carta para ti 💌</button>
+    </div>
+
+    <div id="letter-container" onclick="closeLetter()">
+        <div class="letter-content" id="letter-content" onclick="event.stopPropagation()">
+            <span class="close-letter" onclick="closeLetter()">&times;</span>
+            <p>Claudia,</p>
+            <br>
+            <p>Hay mucho que admiro de ti, especialmente tu forma de ser. Sé que el camino no ha sido perfecto y que los
+                errores han estado presentes, pero también sé que tenemos la voluntad de trabajar en nosotros y seguir
+                adelante mientras nos elijamos.</p>
+            <br>
+            <p>Ambos hemos cargado con el peso de la pérdida de nuestra amiga, y lo único que deseo es que ninguno de
+                los dos tenga que sufrir más. Mereces ser feliz, y merecemos ser felices ambos. Hagámoslo por nosotros,
+                por nuestra tranquilidad, y también para honrar la memoria de ella, viviendo con la alegría que ella
+                querría vernos tener.</p>
+            <br>
+            <p>Te quiero mucho. ❤️</p>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img src="" id="lightbox-img" alt="Foto ampliada">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
